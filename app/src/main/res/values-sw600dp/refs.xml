@@ -1,0 +1,5 @@
+<resources>
+
+    <item name="fragment_lifesumitem" type="layout">@layout/fragment_lifesumitem_grid</item>
+
+</resources>
