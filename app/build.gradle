@@ -14,8 +14,8 @@ android {
 
     defaultConfig {
         applicationId "com.alterego.lifesumtest.app"
-        minSdkVersion 9
-        targetSdkVersion 20
+        minSdkVersion 11
+        targetSdkVersion 19
         versionCode 1
         versionName "1.0"
     }
