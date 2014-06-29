@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.alterego.lifesumtest.app.fragments.NavigationDrawerFragment;
+import com.alterego.lifesumtest.app.fragments.SavedItemsFragment;
 import com.alterego.lifesumtest.app.fragments.SearchFragment;
 
 
@@ -51,9 +52,9 @@ public class MainActivity extends ActionBarActivity
         Fragment fragment_inst;
 
         switch (position) {
-            case 1: fragment_inst = new SearchFragment();
+            case 0: fragment_inst = new SearchFragment();
                 break;
-            case 2: fragment_inst = new SearchFragment();
+            case 1: fragment_inst = SavedItemsFragment.newInstance();
                 break;
             default:
                 fragment_inst = new SearchFragment();
@@ -77,6 +78,9 @@ public class MainActivity extends ActionBarActivity
                 break;
             case 2:
                 mTitle = getString(R.string.title_section2);
+                break;
+            case 3:
+                mTitle = getString(R.string.title_section3);
                 break;
         }
     }
@@ -110,9 +114,9 @@ public class MainActivity extends ActionBarActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
         return super.onOptionsItemSelected(item);
     }
 
