@@ -31,6 +31,8 @@ import rx.schedulers.Schedulers;
 
 public class SavedItemsFragment extends Fragment {
 
+    private static final String FRAGMENT_TITLE = "Saved items";
+
     private SettingsManager mSettingsManager;
     private OnFragmentInteractionListener mListener;
     private List<LifesumItem> mLifesumItems = new ArrayList<LifesumItem>();
@@ -79,6 +81,7 @@ public class SavedItemsFragment extends Fragment {
         super.onAttach(activity);
         try {
             mListener = (OnFragmentInteractionListener) activity;
+            mListener.setActionBarTitle(FRAGMENT_TITLE);
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
                     + " must implement OnFragmentInteractionListener");
