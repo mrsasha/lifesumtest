@@ -1,4 +1,4 @@
-package com.alterego.lifesumtest.app;
+package com.alterego.lifesumtest.app.fragments;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.alterego.lifesumtest.LifesumItem;
+import com.alterego.lifesumtest.app.R;
 
 import java.util.List;
 

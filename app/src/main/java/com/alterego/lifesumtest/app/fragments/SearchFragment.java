@@ -1,4 +1,4 @@
-package com.alterego.lifesumtest.app;
+package com.alterego.lifesumtest.app.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,6 +11,10 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.alterego.lifesumtest.app.MainApplication;
+import com.alterego.lifesumtest.app.OnFragmentInteractionListener;
+import com.alterego.lifesumtest.app.R;
+import com.alterego.lifesumtest.app.SettingsManager;
 import com.alterego.lifesumtest.app.data.LifesumResponse;
 
 import rx.Observer;

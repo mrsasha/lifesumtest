@@ -1,4 +1,4 @@
-package com.alterego.lifesumtest.app;
+package com.alterego.lifesumtest.app.fragments;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,6 +10,10 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 
+import com.alterego.lifesumtest.app.MainApplication;
+import com.alterego.lifesumtest.app.OnFragmentInteractionListener;
+import com.alterego.lifesumtest.app.R;
+import com.alterego.lifesumtest.app.SettingsManager;
 import com.alterego.lifesumtest.app.data.LifesumItem;
 import com.alterego.lifesumtest.app.data.LifesumResponse;
 
