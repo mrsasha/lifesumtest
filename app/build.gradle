@@ -4,6 +4,14 @@ android {
     compileSdkVersion 19
     buildToolsVersion "20"
 
+    sourceSets {
+        main {
+            java {
+                srcDir 'src-gen'
+            }
+        }
+    }
+
     defaultConfig {
         applicationId "com.alterego.lifesumtest.app"
         minSdkVersion 9
@@ -31,4 +39,7 @@ dependencies {
     compile 'com.netflix.rxjava:rxjava-android:0.17.6'
     compile 'org.projectlombok:lombok:1.14.2'
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.1'
+    compile 'de.greenrobot:greendao:+'
 }
+
+

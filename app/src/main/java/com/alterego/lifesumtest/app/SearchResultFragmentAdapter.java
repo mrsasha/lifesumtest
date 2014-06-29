@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.alterego.lifesumtest.app.data.LifesumItem;
+import com.alterego.lifesumtest.LifesumItem;
 
 import java.util.List;
 
