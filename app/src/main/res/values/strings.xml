@@ -12,5 +12,6 @@
     <string name="search_button_text">Search!</string>
     <string name="search_results_empty">We have found no food items matching your search</string>
     <string name="action_save">Save items</string>
+    <string name="action_delete">Delete items</string>
 
 </resources>
