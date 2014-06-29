@@ -61,5 +61,8 @@ public class SearchResultFragmentAdapter extends ArrayAdapter<LifesumItem> {
         return view;
     }
 
-
+    @Override
+    public LifesumItem getItem(int position) {
+        return mLifesumItems.get(position);
+    }
 }
