@@ -36,7 +36,7 @@ public class SavedItemsFragment extends Fragment {
     private List<LifesumItem> mLifesumItems = new ArrayList<LifesumItem>();
 
     private AbsListView mListView;
-    private SearchResultFragmentAdapter mAdapter;
+    private LifesumItemListAdapter mAdapter;
     private ActionMode mActionMode;
 
 
@@ -56,7 +56,7 @@ public class SavedItemsFragment extends Fragment {
         mSettingsManager.getLogger().info("SearchResultFragment onCreate");
 
         mLifesumItems = mSettingsManager.getLifesumItemDao().loadAll();
-        mAdapter = new SearchResultFragmentAdapter(mSettingsManager.getParentActivity(), R.layout.fragment_searchresult_listitem, mLifesumItems);
+        mAdapter = new LifesumItemListAdapter(mSettingsManager.getParentActivity(), R.layout.fragment_searchresult_listitem, mLifesumItems);
 
     }
 
@@ -172,7 +172,7 @@ public class SavedItemsFragment extends Fragment {
 
     private void refreshAdapter() {
         mLifesumItems = mSettingsManager.getLifesumItemDao().loadAll();
-        mAdapter = new SearchResultFragmentAdapter(mSettingsManager.getParentActivity(), R.layout.fragment_searchresult_listitem, mLifesumItems);
+        mAdapter = new LifesumItemListAdapter(mSettingsManager.getParentActivity(), R.layout.fragment_searchresult_listitem, mLifesumItems);
         ((AdapterView<ListAdapter>) mListView).setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
     }

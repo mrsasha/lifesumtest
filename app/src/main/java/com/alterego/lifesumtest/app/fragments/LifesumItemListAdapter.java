@@ -12,12 +12,12 @@ import com.alterego.lifesumtest.app.R;
 
 import java.util.List;
 
-public class SearchResultFragmentAdapter extends ArrayAdapter<LifesumItem> {
+public class LifesumItemListAdapter extends ArrayAdapter<LifesumItem> {
 
     private final List<LifesumItem> mLifesumItems;
     private final Activity mContext;
 
-    public SearchResultFragmentAdapter(Activity context, int resource, List<LifesumItem> items) {
+    public LifesumItemListAdapter(Activity context, int resource, List<LifesumItem> items) {
         super(context, resource);
         mContext = context;
         mLifesumItems = items;

@@ -39,7 +39,7 @@ public class SearchResultFragment extends Fragment {
     private List<LifesumItem> mLifesumItems = new ArrayList<LifesumItem>();
 
     private AbsListView mListView;
-    private SearchResultFragmentAdapter mAdapter;
+    private LifesumItemListAdapter mAdapter;
     private android.view.ActionMode mActionMode;
 
 
@@ -67,7 +67,7 @@ public class SearchResultFragment extends Fragment {
             mLifesumItems = searchResultObject.getResponse().getList();
         }
 
-        mAdapter = new SearchResultFragmentAdapter(mSettingsManager.getParentActivity(), R.layout.fragment_searchresult_listitem, mLifesumItems);
+        mAdapter = new LifesumItemListAdapter(mSettingsManager.getParentActivity(), R.layout.fragment_searchresult_listitem, mLifesumItems);
 
     }
 
