@@ -17,6 +17,8 @@ import com.alterego.lifesumtest.app.fragments.SearchFragment;
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks, OnFragmentInteractionListener {
 
+    public static final String SAVED_TITLE = "saved_title";
+
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -27,19 +29,28 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
     private SettingsManager mSettingsManager;
+    private ActionBar mActionBar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         mSettingsManager = MainApplication.getMainApplication().getSettingsManager();
         mSettingsManager.setParentActivity(this);
-
         mSettingsManager.getLogger().info("MainActivity onCreate");
+
+        mActionBar = getSupportActionBar();
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mTitle = getTitle();
+
+
+        if (savedInstanceState != null) {
+            mTitle = savedInstanceState.getString(SAVED_TITLE);
+        } else
+            mTitle = getTitle();
 
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
@@ -52,9 +63,11 @@ public class MainActivity extends ActionBarActivity
         Fragment fragment_inst;
 
         switch (position) {
-            case 0: fragment_inst = new SearchFragment();
+            case 0:
+                fragment_inst = new SearchFragment();
                 break;
-            case 1: fragment_inst = SavedItemsFragment.newInstance();
+            case 1:
+                fragment_inst = SavedItemsFragment.newInstance();
                 break;
             default:
                 fragment_inst = new SearchFragment();
@@ -63,7 +76,7 @@ public class MainActivity extends ActionBarActivity
         openFragmentInMainContainer(fragment_inst);
     }
 
-    private void openFragmentInMainContainer (Fragment fragment) {
+    private void openFragmentInMainContainer(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
@@ -84,7 +97,6 @@ public class MainActivity extends ActionBarActivity
                 break;
         }
     }
-
 
 
     public void restoreActionBar() {
@@ -127,11 +139,18 @@ public class MainActivity extends ActionBarActivity
     }
 
     @Override
-    public void setActionBarTitle (String title) {
-        mTitle = title;
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(mTitle);
+    public void setActionBarTitle(String title) {
+        if (title != null)
+            mTitle = title;
+
+        if (mActionBar != null)
+            mActionBar.setTitle(mTitle);
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(SAVED_TITLE, mTitle.toString());
+    }
 
 }

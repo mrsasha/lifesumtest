@@ -109,10 +109,12 @@ public class SearchFragment extends Fragment {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
+        String searchtext = "";
         super.onSaveInstanceState(outState);
-        String searchtext = mEditText.getText().toString();
+        if (mEditText!=null)
+            searchtext = mEditText.getText().toString();
 
-        if (searchtext != null && searchtext != "")
+        if (searchtext != null && !searchtext.equals(""))
             outState.putString(LAST_SEARCH, searchtext);
     }
 
